@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    name = 'davidperez01/eurekaserver'
+    name = 'davidperez01/sharebook'
   }
   stages {
     stage('Clone') {
