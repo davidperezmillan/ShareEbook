@@ -13,6 +13,6 @@ public class ShareBookAplication {
 	}
 
 	private void commitTry(){
-		System.out.println("Just to test the connection with Jenkins");
+		System.out.println("Just to test the connection with Blue Ocean");
 	}
 }
