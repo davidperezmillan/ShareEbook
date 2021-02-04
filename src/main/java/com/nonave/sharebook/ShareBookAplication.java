@@ -12,6 +12,7 @@ public class ShareBookAplication {
 		SpringApplication.run(ShareBookAplication.class, args);
 	}
 
-
-// New commit
+	private void commitTry(){
+		System.out.println("only try connection Jenkins")
+	}
 }
