@@ -53,6 +53,7 @@ public class ShareBookController {
 		return ResponseEntity.ok().build();
 	}
 
+	// TODO bug no content
 	@DeleteMapping(value = "{id}")
 	public ResponseEntity<ShareBook> deleteShare(@PathVariable("id") Long id) {
 		shareBookDao.deleteById(id);
@@ -62,11 +63,14 @@ public class ShareBookController {
 	@PatchMapping(value = "{id}")
 	public ResponseEntity<ShareBook> updateStatusShare(@PathVariable("id") Long id) {
 		Optional<ShareBook> optionalShareBook = shareBookDao.findById(id);
-		ShareBook sharebook = optionalShareBook.get();
-		sharebook.setStatus(Boolean.FALSE);
-		shareBookDao.save(sharebook);
-		return (optionalShareBook.isPresent()) ? ResponseEntity.ok(optionalShareBook.get())
-				: ResponseEntity.noContent().build();
+		if (optionalShareBook.isPresent()) {
+			ShareBook sharebook = optionalShareBook.get();
+			sharebook.setStatus(Boolean.FALSE);
+			shareBookDao.save(sharebook);
+			return ResponseEntity.ok(sharebook);
+		}else {
+			return ResponseEntity.noContent().build();
+		}
 	}
 
 }
