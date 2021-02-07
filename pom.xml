@@ -48,7 +48,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
@@ -98,11 +97,11 @@
 			</plugin>
 
 
-        <plugin>
-          <groupId>org.eclipse.jkube</groupId>
-          <artifactId>kubernetes-maven-plugin</artifactId>
-          <version>1.0.1</version>
-        </plugin>
+			<plugin>
+			  <groupId>org.eclipse.jkube</groupId>
+			  <artifactId>kubernetes-maven-plugin</artifactId>
+			  <version>1.0.1</version>
+			</plugin>
 
 		</plugins>
 	</build>
@@ -115,20 +114,3 @@
 	</repositories>
 
 </project>
-
-<!-- <dependencies> <dependency> <groupId>org.springframework.boot</groupId> 
-	<artifactId>spring-boot-starter-web</artifactId> </dependency> <dependency> 
-	<groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> 
-	</dependency> <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> 
-	<optional>true</optional> </dependency> <dependency> <groupId>io.springfox</groupId> 
-	<artifactId>springfox-boot-starter</artifactId> <version>3.0.0</version> 
-	</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
-	<scope>runtime</scope> <optional>true</optional> </dependency> <dependency> 
-	<groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-test</artifactId> 
-	<exclusions> <exclusion> <groupId>org.junit.vintage</groupId> <artifactId>junit-vintage-engine</artifactId> 
-	</exclusion> </exclusions> <scope>test</scope> </dependency> </dependencies> 
-	<dependencyManagement> <dependencies> <dependency> <groupId>org.springframework.cloud</groupId> 
-	<artifactId>spring-cloud-dependencies</artifactId> <version>${spring-cloud.version}</version> 
-	<type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> 
-	<build> <plugins> <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
-	</plugin> </plugins> </build> </project> -->
