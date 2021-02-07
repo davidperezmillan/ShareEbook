@@ -45,4 +45,12 @@ pipeline {
       }
     }
   }
+  post {
+    success {
+      slackSend(color: 'good', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Funcionó correctamente")
+    }
+    failure {
+      slackSend(color: 'danger', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Hubo un problema con el deploy")
+    }
+  }
 }
