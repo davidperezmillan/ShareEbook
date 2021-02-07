@@ -8,6 +8,14 @@ pipeline {
       steps {
         git(url: 'https://github.com/davidperezmillan/ShareEbook.git', branch: 'main', changelog: true)
       }
+      post {
+	    success {
+	      slackSend(color: 'good', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Recuperamos correctamente")
+	    }
+	    failure {
+	      slackSend(color: 'danger', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Hubo un problema con el Git")
+	    }
+	  }
     }
     stage('Clean') {
       agent any
