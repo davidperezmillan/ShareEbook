@@ -56,10 +56,11 @@ pipeline {
   post {
     success {
       slackSend(color: 'good', channel:'sharebook', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Funcionó correctamente")
-      
+      slackSend(color: 'good', channel:'nonave', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Funcionó correctamente")
     }
     failure {
       slackSend(color: 'danger', channel:'sharebook', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Hubo un problema con el deploy")
+      slackSend(color: 'danger', channel:'nonave', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Hubo un problema con el deploy")
     }
   }
 }
